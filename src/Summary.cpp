@@ -219,10 +219,10 @@ void xmrig::Summary::print(Controller *controller)
     print_pages(config);
     print_cpu(config);
     print_memory(config);
-    print_threads(config);
-    config->pools().print();
+//    print_threads(config);
+//    config->pools().print();
 
-    print_commands(config);
+//    print_commands(config);
 }
 
 

@@ -55,11 +55,11 @@ xmrig::App::~App()
 
 int xmrig::App::exec()
 {
-    if (!m_controller->isReady()) {
-        LOG_EMERG("no valid configuration found, try https://xmrig.com/wizard");
-
-        return 2;
-    }
+//    if (!m_controller->isReady()) {
+//        LOG_EMERG("no valid configuration found, try https://xmrig.com/wizard");
+//
+//        return 2;
+//    }
 
     m_signals = std::make_shared<Signals>(this);
 
@@ -79,18 +79,20 @@ int xmrig::App::exec()
 
     Summary::print(m_controller.get());
 
-    if (m_controller->config()->isDryRun()) {
-        LOG_NOTICE("%s " WHITE_BOLD("OK"), Tags::config());
+    return 0;
 
-        return 0;
-    }
-
-    m_controller->start();
-
-    rc = uv_run(uv_default_loop(), UV_RUN_DEFAULT);
-    uv_loop_close(uv_default_loop());
-
-    return rc;
+//    if (m_controller->config()->isDryRun()) {
+//        LOG_NOTICE("%s " WHITE_BOLD("OK"), Tags::config());
+//
+//        return 0;
+//    }
+//
+//    m_controller->start();
+//
+//    rc = uv_run(uv_default_loop(), UV_RUN_DEFAULT);
+//    uv_loop_close(uv_default_loop());
+//
+//    return rc;
 }
 
 

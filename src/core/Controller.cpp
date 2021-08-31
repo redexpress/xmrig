@@ -67,9 +67,9 @@ void xmrig::Controller::start()
 {
     Base::start();
 
-    m_miner = std::make_shared<Miner>(this);
-
-    network()->connect();
+//    m_miner = std::make_shared<Miner>(this);
+//
+//    network()->connect();
 }
 
 

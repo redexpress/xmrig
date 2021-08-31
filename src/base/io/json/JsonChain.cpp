@@ -81,7 +81,7 @@ bool xmrig::JsonChain::addFile(const char *fileName)
         }
     }
     else {
-        LOG_ERR("unable to open \"%s\".", fileName);
+//        LOG_ERR("unable to open \"%s\".", fileName);
     }
 
     return false;

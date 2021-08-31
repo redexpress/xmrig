@@ -194,7 +194,7 @@ int xmrig::Base::init()
     d_ptr->api->addListener(this);
 #   endif
 
-    Platform::init(config()->userAgent());
+//    Platform::init(config()->userAgent());
 
     if (isBackground()) {
         Log::setBackground(true);
@@ -288,8 +288,10 @@ bool xmrig::Base::reload(const rapidjson::Value &json)
 
 xmrig::Config *xmrig::Base::config() const
 {
-    assert(d_ptr->config != nullptr);
-
+//    assert(d_ptr->config != nullptr);
+    if (d_ptr->config == nullptr) {
+        return new Config();
+    }
     return d_ptr->config;
 }
 
